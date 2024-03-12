@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>dz_1</title>
+	</head>
+	<body>
+		<div id="app" class="demo">
+			<button @click="reverseText" :style="buttonStyles">{{buttonText}}</button> <br />
+			<button style="margin-top: 10px" @click="addItem">Добавить Новый элемент списка</button>
+			<ul>
+				<li v-for="(item, index) in list" :key="index" @click="removeItem(index)">{{ item }}</li>
+			</ul>
+		</div>
+		<script src="vue.js"></script>
+		<script>
+			new Vue({
+				el: '#app',
+				data: {
+					buttonText: 'Этот текст сейчас перевернется',
+					buttonStyles: {
+						padding: '10px',
+					},
+					list: [],
+				},
+				methods: {
+					reverseText() {
+						this.buttonText = this.buttonText.split('').reverse().join('');
+					},
+					addItem(index) {
+						this.list.push('Новый элемент списка');
+					},
+					removeItem(index) {
+						this.list.splice(index, 1);
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
