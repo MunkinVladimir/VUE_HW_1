@@ -83,7 +83,7 @@ h4 {
 .main__block {
 	display: flex;
 	height: 100%;
-	background-image: url(banner.png);
+	background-image: url(banner.webp);
 	border-radius: 80px;
 	background-repeat: no-repeat;
 }
